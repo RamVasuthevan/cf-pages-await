@@ -73,7 +73,7 @@ export default async function run() {
 
       // Update deployment (if enabled)
       if (token !== '') {
-        await updateDeployment(token, deployment, latestStage.status === 'success' ? 'success' : 'failure');
+        //await updateDeployment(token, deployment, latestStage.status === 'success' ? 'success' : 'failure');
       }
     }
   }

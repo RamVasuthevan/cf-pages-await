@@ -47,7 +47,7 @@ export default async function run() {
       console.log('# Now at stage: ' + lastStage);
 
       if (!markedAsInProgress) {
-        await updateDeployment(token, deployment, 'in_progress');
+        //await updateDeployment(token, deployment, 'in_progress');
         markedAsInProgress = true;
       }
     }
@@ -55,7 +55,7 @@ export default async function run() {
     if (latestStage.status === 'failed') {
       waiting = false;
       core.setFailed(`Deployment failed on step: ${latestStage.name}!`);
-      await updateDeployment(token, deployment, 'failure');
+      //await updateDeployment(token, deployment, 'failure');
       return;
     }
 
@@ -73,7 +73,7 @@ export default async function run() {
 
       // Update deployment (if enabled)
       if (token !== '') {
-        await updateDeployment(token, deployment, latestStage.status === 'success' ? 'success' : 'failure');
+        //await updateDeployment(token, deployment, latestStage.status === 'success' ? 'success' : 'failure');
       }
     }
   }
